@@ -1,15 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet} from 'react-native';
 import Post from './src/components/Post.js'
+import {LinearGradient} from 'expo-linear-gradient';
 
 const props = {titulo:'text text', url: 'https://reactnative.dev/docs/assets/p_cat2.png', resumo:'text text'}
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <LinearGradient 
+      style={styles.container}
+      colors={["#cacff9","#f5cbd9","#f4bccd"]}
+      start={{x:0, y:0}}
+      end={{x:1, y:1}}
+      locations={[0,0.5,1]}
+    >
       <Post {...props}></Post>
       <StatusBar style="auto" />
-    </View>
+    </LinearGradient>
   );
 }
 
@@ -19,5 +26,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontSize: 35,
+    alignSelf: 'flex-end'
   },
 });
