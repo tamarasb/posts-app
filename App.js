@@ -3,7 +3,8 @@ import { StyleSheet} from 'react-native';
 import Post from './src/components/Post.js'
 import {LinearGradient} from 'expo-linear-gradient';
 
-const props = {titulo:'text text', url: 'https://reactnative.dev/docs/assets/p_cat2.png', resumo:'text text'}
+const post1 = {titulo:'text text', imagem: require('./assets/bird.jpg'), resumo:'text text'}
+const post2 = {titulo:'text text', imagem: require('./assets/book.jpg'), resumo:'text text'}
 
 export default function App() {
   return (
@@ -14,7 +15,8 @@ export default function App() {
       end={{x:1, y:1}}
       locations={[0,0.5,1]}
     >
-      <Post {...props}></Post>
+      <Post {...post1}></Post>
+      <Post {...post2}></Post>
       <StatusBar style="auto" />
     </LinearGradient>
   );
@@ -30,5 +32,5 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 35,
     alignSelf: 'flex-end'
-  },
+  }
 });
