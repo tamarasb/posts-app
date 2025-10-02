@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import Post from './src/components/Post.js'
+
+const props = {titulo:'text text', url: 'https://reactnative.dev/docs/assets/p_cat2.png', resumo:'text text'}
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Post {...props}></Post>
       <StatusBar style="auto" />
     </View>
   );
