@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet} from 'react-native';
+import { StyleSheet, ScrollView} from 'react-native';
 import Post from './src/components/Post.js'
 import {LinearGradient} from 'expo-linear-gradient';
 
@@ -8,17 +8,19 @@ const post2 = {titulo:'text text', imagem: require('./assets/book.jpg'), resumo:
 
 export default function App() {
   return (
-    <LinearGradient 
-      style={styles.container}
-      colors={["#cacff9","#f5cbd9","#f4bccd"]}
-      start={{x:0, y:0}}
-      end={{x:1, y:1}}
-      locations={[0,0.5,1]}
-    >
-      <Post {...post1}></Post>
-      <Post {...post2}></Post>
-      <StatusBar style="auto" />
-    </LinearGradient>
+    <ScrollView>
+      <LinearGradient 
+        style={styles.container}
+        colors={["#cacff9","#f5cbd9","#f4bccd"]}
+        start={{x:0, y:0}}
+        end={{x:1, y:1}}
+        locations={[0,0.5,1]}
+      >
+        <Post {...post1}></Post>
+        <Post {...post2}></Post>
+        <StatusBar style="auto" />
+      </LinearGradient>
+    </ScrollView>
   );
 }
 
